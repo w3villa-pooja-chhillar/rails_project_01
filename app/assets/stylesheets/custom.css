@@ -1,0 +1,43 @@
+.navbar{
+    background-color: black !important;
+}
+.nav-link{
+    color: white !important;
+}
+#logo{
+    float: left;
+    font-size: 1.7em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+
+#home-container {
+    margin-top: 25px;
+  }
+.jumbotron{
+    background-image: url('https://images.unsplash.com/photo-1432821596592-e2c18b78144f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8d3JpdHRpbmd8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    height: 425px;
+}
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+    flex: 1 0 auto;
+    background-color: lightgrey;
+  }
+
+#sticky-footer {
+  flex-shrink: none;
+  padding-top:17px !important;
+  padding-bottom:17px !important;
+}
+.button_to{
+  display:inline-block;
+}
