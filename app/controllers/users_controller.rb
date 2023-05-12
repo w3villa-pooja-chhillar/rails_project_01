@@ -24,6 +24,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
         flash[:notice] = 'Welcome to the alpha blogs,Thanks for Signup'
+        redirect_to  articles_path
+    else
+      render :new,  status: :unprocessable_entity
     end
   end
   
@@ -58,6 +61,6 @@ class UsersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def user_params
-      params.require(:user).permit(:username)
+      params.require(:user).permit(:username, :email , :password)
     end
 end
