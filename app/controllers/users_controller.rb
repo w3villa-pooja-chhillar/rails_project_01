@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[ show edit update destroy ]
-
+before_action :require_same_user, only: [:edit, :update, :destroy]
   # GET /users or /users.json
   def index
     @users = User.paginate(page: params[:page], per_page:4)
@@ -46,10 +46,15 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
+   session[:id]= nil
+   flash[:notice]= "Account and all associated articles succesfully deleted"
+   redirect_to articles_path
+  end
+  
+  def require_same_user
+    if current_user !=  @user
+      flash[:alert] = "You can edit  your own details"
+     redirect_to @user
     end
   end
 
