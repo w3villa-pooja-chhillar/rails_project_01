@@ -8,7 +8,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
 
   # GET /users/1 or /users/1.json
   def show
-    @articles = @user.articles.paginate(page: params[:page], per_page: 5)
+    @articles = @user.articles.paginate(page: params[:page], per_page: 3)
   end
 
   # GET /users/new

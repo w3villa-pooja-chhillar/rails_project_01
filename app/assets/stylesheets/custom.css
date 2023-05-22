@@ -97,3 +97,16 @@ body {
       object-fit:cover;
       border-radius:10px;
     }
+    .img{
+      height:240px;
+      width:200px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .img img{
+        height:100%;
+        width:100%;
+        object-fit:cover;
+        border-radius:10px;
+    }
